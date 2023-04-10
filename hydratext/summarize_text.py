@@ -12,7 +12,6 @@ def summarize(text, percentage, language):
     punct = string.punctuation +'\n'
 
     stop_w = stopwords.words(language)
-
     sent_tokenized_text = sent_tokenize(text)
     word_tokenized_text = word_tokenize(text)
 

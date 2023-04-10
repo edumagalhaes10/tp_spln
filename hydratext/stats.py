@@ -6,14 +6,16 @@ import string
 
 def stats(text):
     tokens = nltk.word_tokenize(text)
-    text1 = nltk.Text(tokens)
-    colocations = text1.collocation_list()
-    # print(colocations)
     punct = string.punctuation +'\n'
     filtered = [w for w in tokens if w.lower() not in punct]
+    text1 = nltk.Text(filtered)
+    text2 = nltk.Text(tokens)
+    colocations = text2.collocation_list()
+    # print(colocations)
     most_used = Counter(filtered).most_common(10)
     # print(most_used.most_common(10)) 
     num_vocab = len(text1.vocab())
+    print(text1.vocab())
     md = f"""
 ### Vocabulary count: 
 {num_vocab}
