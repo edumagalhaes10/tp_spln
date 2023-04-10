@@ -7,11 +7,11 @@ from heapq import nlargest
 # text = """I enjoy read book on sundays. It's relax and helps me to unwind from the stress of the week. I usually read fiction book, like the one about a detective who solve crime in a small town. The character are interesting and the plot is always full of surprises. Sometimes I read non-fiction book too, especially about science or history. I find it fascinating to learn about how thing work or about event that happened in the past. My only regret is that I don't have enough time to read as much as I want. Between work, family and other responsibilities, it can be difficult to find the time to indulge in my favorite pastime. He are moving here. I am doing fine. How is you? How is they? Matt like fish"""
 
 
-def summarize(text, percentage):
+def summarize(text, percentage, language):
     percentage = percentage / 100
     punct = string.punctuation +'\n'
 
-    stop_w = stopwords.words("english")
+    stop_w = stopwords.words(language)
 
     sent_tokenized_text = sent_tokenize(text)
     word_tokenized_text = word_tokenize(text)

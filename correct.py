@@ -11,6 +11,8 @@ def highlight_sentence(phrase,edits):
          # add word between edit[2] and edit[3]
          words = words[:edit[2]] + [""] + words[edit[2]:]
       words[edit[2]] = f'~~:red[{edit[1]}]~~ :green[{edit[4]}]'
+      if edit[3] - edit[2] >= 2:
+         words[edit[3]-1] = ""
    return " ".join(words)
 
 def correct_sentence(sentence, gramformer):
