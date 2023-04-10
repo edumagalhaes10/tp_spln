@@ -19,6 +19,3 @@ def hydratext():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     command = f"streamlit run {current_dir}/HydraText.py"
     os.system(command)
-    print(subprocess.run("pwd"))
-    sys.argv = ["streamlit", "run", "HydraText.py"]
-    sys.exit(stcli.main())
