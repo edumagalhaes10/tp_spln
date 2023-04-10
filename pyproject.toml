@@ -14,12 +14,13 @@ dependencies = [
     "streamlit >= 1.20.0",
     "pytesseract >= 0.3.10",
     "Pillow >= 9.5.0",
-    "gramformer >= 1.0",
+    "gramformer @ git+https://github.com/PrithivirajDamodaran/Gramformer.git",
     "nltk >= 3.8.1",
     "pdftotext >= 2.2.2",
     "wget >= 3.2",
     "beautifulsoup4 >= 4.11.2",
     "urllib3 >= 1.26.5",
+    "lxml"
 ]
 
 [project.scripts]
