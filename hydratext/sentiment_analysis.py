@@ -1,4 +1,4 @@
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
@@ -22,6 +22,7 @@ def sentiment_analysis(text, language):
     scores = analyzer.polarity_scores(processed_text)
     if -0.1 < scores['compound'] < 0.1: sentiment = "Neutral"
     else: sentiment = ":green[Positive]" if scores['compound'] > 0 else ":red[Negative]"
+    print("Scores",scores)
     return sentiment
 
 

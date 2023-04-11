@@ -14,27 +14,14 @@ image = Image.open(f'{folder}/images/hydratext_title.png')
 st.image(image,width=400)
 
 
-st.markdown("""
-## Welcome to HydraText, 
-A Natural Language Processing tool developed in the context of a Software Engineering Master's course: Scripting in Natural Language Proccesing. 
+filename_md = os.path.dirname(folder) + "/README.md"
 
-The present tool provides the following functionalities and was designed to be accesible for any person with or without knowledge either in Software Engineering and Natural Language Processing. 
 
-Have fun using our tool!!! We hope it's useful!!! 😁
-
-### 📸 Extract text from images
-
-### 📄 Extract text from PDFs
-
-### 📄 Correct grammar
-
-### 📄 Summarize text
-
-### 📊 Analyze text sentiment
-
-### 📊 Text statistics
-
-""")
+with open(filename_md, "r") as f:
+    readme_text = f.readlines()
+    readme_text = readme_text[1:]
+    readme_text = "".join(readme_text)
+    st.markdown(readme_text,unsafe_allow_html=True)
 
 #st.sidebar.success("Select a demo above.")
 

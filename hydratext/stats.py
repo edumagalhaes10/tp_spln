@@ -16,7 +16,8 @@ def stats(text, language):
     text2 = nltk.Text(tokens)
     colocations = text2.collocation_list()
     # print(colocations)
-    most_used = Counter(filtered2).most_common(10)
+    most_used_no_stop = Counter(filtered2).most_common(10)
+    most_used = Counter(tokens).most_common(10)
     # print(most_used.most_common(10)) 
     num_vocab = len(text1.vocab())
     print(text1.vocab())
@@ -25,14 +26,25 @@ def stats(text, language):
 {num_vocab}
 
 ### Top 10 Most Used Words: 
+> Words that are not stopwords and punctuation.
+
 | Word                                    | Frequency                               | 
 | --------------------------------------- | --------------------------------------- |
 """
 
-    for w in most_used:
+    for w in most_used_no_stop:
         md+=f"""| {w[0]} | {w[1]} |\n"""   
     md+="""
+---
 
+> No restrictions.
+
+| Word                                    | Frequency                               |
+| --------------------------------------- | --------------------------------------- |
+"""
+    for w in most_used:
+        md+=f"""| {w[0]} | {w[1]} |\n"""
+    md+="""
 ### Colocations:
 > A sequence of words that occurs together unusually often.
 

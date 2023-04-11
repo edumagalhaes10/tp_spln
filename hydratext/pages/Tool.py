@@ -82,13 +82,11 @@ if not st.session_state.lang_tesseract:
        td = tr.find_all('td')
        if td:
            st.session_state.lang_tesseract[td[0].text] = td[1].text
-   st.session_state.langs = pytesseract.get_languages()
+
+
    
 
-download = {}
-for lang in st.session_state.lang_tesseract:
-   if lang not in st.session_state.langs:
-      download[lang] = lang
+
 
 def install_default():
    if not os.path.exists(home):
@@ -108,10 +106,22 @@ def install_default():
 language = 'eng'
 text = None
 if genre == 'Image':
+   try:
+      st.session_state.langs = pytesseract.get_languages()
+   except:
+      st.error("Tesseract not found. Make sure you have installed. See [installation instructions](https://tesseract-ocr.github.io/tessdoc/Installation.html)")
+      exit()
    if not st.session_state.tesseract_load:
       install_default()
       st.session_state.tesseract_load = True
+   download = {}
+   for lang in st.session_state.lang_tesseract:
+      if lang not in st.session_state.langs:
+         download[lang] = lang
+   download = [f"{lang}: {st.session_state.lang_tesseract[lang]}" if lang in st.session_state.lang_tesseract else f"{lang}: {lang}" for lang in download]
+   download[0] = ""
    multi = st.selectbox("Download languages", download,index=0)
+   multi = multi.split(":")[0]
    if multi.strip():
       if st.button("Download"):
          with st.spinner("Downloading language..."):
@@ -121,7 +131,7 @@ if genre == 'Image':
             st.session_state.langs.append(multi)
    uploaded_file = st.file_uploader("Choose a file")
    if uploaded_file:
-      langs = pytesseract.get_languages()
+      langs = st.session_state.langs
       eng_index = langs.index('eng')
       try:
          st.image(uploaded_file, use_column_width=True)
@@ -205,7 +215,7 @@ if text:
             with st.spinner('Summarizing...'):
                st.write(summarize(text, percentage,language_nltk))
       else:
-         st.markdown("Help: Text must be over {size_text} chars")
+         st.warning(f"Help: Text must be over {size_text} characters to summarize.")
    with col3:
       language_nltk = st.multiselect('Language of text',langs_nltk,max_selections=1, key="Sent_analysis")
       if language_nltk:
