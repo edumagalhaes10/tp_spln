@@ -22,7 +22,8 @@ dependencies = [
     "urllib3 >= 1.26.5",
     "lxml >= 4.9.1",
     "spacy >= 2.3.9",
-    "torch >= 1.13.1"
+    "torch >= 1.13.1",
+    "vader-multi"
 ]
 
 [project.scripts]
