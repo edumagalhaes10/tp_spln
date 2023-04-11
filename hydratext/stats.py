@@ -13,7 +13,7 @@ def stats(text, language):
     filtered2 = [w for w in tokens if w.lower() not in stop_w and w.lower() not in punct and w.lower() not in ['\'s']]
 
     text1 = nltk.Text(filtered)
-    text2 = nltk.Text(filtered2)
+    text2 = nltk.Text(tokens)
     colocations = text2.collocation_list()
     # print(colocations)
     most_used = Counter(filtered2).most_common(10)
