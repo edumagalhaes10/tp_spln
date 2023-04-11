@@ -1,18 +1,22 @@
 import nltk
 from collections import Counter
 import string 
+from nltk.corpus import stopwords
 
 
 
-def stats(text):
+def stats(text, language):
     tokens = nltk.word_tokenize(text)
-    punct = string.punctuation +'\n'
+    punct = string.punctuation +'\n' +'”'+"“"
+    stop_w = stopwords.words(language)
     filtered = [w for w in tokens if w.lower() not in punct]
+    filtered2 = [w for w in tokens if w.lower() not in stop_w and w.lower() not in punct and w.lower() not in ['\'s']]
+
     text1 = nltk.Text(filtered)
-    text2 = nltk.Text(tokens)
+    text2 = nltk.Text(filtered2)
     colocations = text2.collocation_list()
     # print(colocations)
-    most_used = Counter(filtered).most_common(10)
+    most_used = Counter(filtered2).most_common(10)
     # print(most_used.most_common(10)) 
     num_vocab = len(text1.vocab())
     print(text1.vocab())

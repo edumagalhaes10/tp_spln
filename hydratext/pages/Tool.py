@@ -189,7 +189,9 @@ if text:
          with st.spinner('Sentiment Analysis...'):
             st.markdown(sentiment_analysis(text, language_nltk))
    with col4:
-      with st.spinner('Calculating Stats...'):   
-            st.markdown(stats(text))
+      language_nltk = st.multiselect('Language of text',langs_nltk,max_selections=1, key="Stats")
+      if language_nltk:
+         with st.spinner('Calculating Stats...'):   
+            st.markdown(stats(text, language_nltk))
 
 
