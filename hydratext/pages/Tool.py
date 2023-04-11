@@ -37,6 +37,9 @@ if 'lang_tesseract' not in st.session_state:
 if 'nltk_load' not in st.session_state:
    st.session_state.nltk_load = False
 
+if 'tesseract_load' not in st.session_state:
+   st.session_state.tesseract_load = False
+
 if st.session_state.nltk_load == False:
    nltk.download('wordnet')
    nltk.download('vader_lexicon') 
@@ -58,7 +61,7 @@ st.set_page_config(page_title="SPLN", page_icon="📖")
 
 genre = st.radio(
     "Select your input",
-    ('Image', 'Text', 'PDF'),horizontal=True, on_change=on_change_genre)
+    ('Image', 'Text', 'PDF'),horizontal=True, on_change=on_change_genre, index=1)
 
 
 if st.session_state.input_type != genre:
@@ -87,10 +90,27 @@ for lang in st.session_state.lang_tesseract:
    if lang not in st.session_state.langs:
       download[lang] = lang
 
+def install_default():
+   if not os.path.exists(home):
+      os.makedirs(home)
+   elif not os.path.isdir(home):
+      st.error(f"{home} is not a directory. Remove it and try again.")
+      exit()
+   if not os.path.exists(f"{home}/eng.traineddata") and 'eng' not in st.session_state.langs:
+      print(st.session_state.langs)
+      url = f"https://github.com/tesseract-ocr/tessdata/raw/main/eng.traineddata"
+      output_directory = f"{home}"
+      st.session_state.langs.append('eng')
+      with st.spinner("Downloading default language..."):
+         wget.download(url, out=output_directory)
+
 
 language = 'eng'
 text = None
 if genre == 'Image':
+   if not st.session_state.tesseract_load:
+      install_default()
+      st.session_state.tesseract_load = True
    multi = st.selectbox("Download languages", download,index=0)
    if multi.strip():
       if st.button("Download"):
@@ -111,6 +131,9 @@ if genre == 'Image':
          text = pytesseract.image_to_string(Image.open(uploaded_file), lang=language)
       except UnidentifiedImageError:
          st.error("Error on image conversion. Make sure the file is an image.")
+         exit()
+      except:
+         st.error("Tesseract not found. Make sure you have installed. See [installation instructions](https://tesseract-ocr.github.io/tessdoc/Installation.html)")
          exit()
       size = text.count("\n") * 25
       text = st.text_area("Text",text, on_change=on_change, height=size)
