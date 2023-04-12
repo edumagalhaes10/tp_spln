@@ -14,8 +14,7 @@ image = Image.open(f'{folder}/images/hydratext_title.png')
 st.image(image,width=400)
 
 
-filename_md = os.path.dirname(folder) + "/README.md"
-
+filename_md = os.path.dirname(folder) + "/hydratext/README.md"
 
 with open(filename_md, "r") as f:
     readme_text = f.readlines()

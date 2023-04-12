@@ -18,6 +18,7 @@ from os.path import expanduser
 
 
 
+
 if 'out' not in st.session_state:
    st.session_state.out = None
 
@@ -57,7 +58,14 @@ def on_change():
 def on_change_genre():
    st.session_state.changed = True
 
-st.set_page_config(page_title="SPLN", page_icon="📖")
+
+folder = os.path.dirname(os.path.abspath(__file__))
+
+icon = Image.open(f'{folder}/../images/favicon.png')
+st.set_page_config(
+    page_title="HydraText",
+    page_icon=icon,
+)
 
 genre = st.radio(
     "Select your input",
