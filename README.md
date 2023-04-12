@@ -1,9 +1,9 @@
 <img src="hydratext/images/hydratext_title.png">
 
 ## Welcome to HydraText, 
-A Natural Language Processing tool developed in the context of a Software Engineering Master's course: Scripting in Natural Language Proccesing. 
+A Natural Language Processing tool developed in the context of a Software Engineering Master's course: Scripting in Natural Language Processing. 
 
-The present tool provides the following functionalities and was designed to be accesible for any person with or without knowledge either in Software Engineering and Natural Language Processing. 
+The present tool provides the following functionalities and is designed to be accessible for any person with or without knowledge either in Software Engineering and Natural Language Processing. 
 
 Have fun using our tool!!! We hope it's useful!!! 😁
 
@@ -26,15 +26,12 @@ The corrected text can be seen in two ways:
 
 ### 📄 Summarize text
 
-Provide a text, or use the text extracted from an image or PDF or the text with the grammar corrected, and the result will be a summary of the text.
-The length of the summary can be changed by the user, default value is 50% of the original text.
-But change it to a 25% or 75%.
-
-
+Provide a text, use the text extracted from an image or PDF, or the text with the grammar corrected. The result will be a summary of the text.
+The length of the summary can be changed by the user. Default value is 50% of the original text but it can be changed to 25% or 75% of it.
 
 ### 📊 Analyze text sentiment
 
-Provide a text, or use the text extracted from an image or PDF or the text with the grammar corrected, and it will tell if the text is neutral, postive or negative.
+Provide a text, or use the text extracted from an image or PDF or the text with the grammar corrected, and it will tell if the text is neutral, postive or negative in what comes to sentiment.
 
 ### 📊 Text statistics
 
