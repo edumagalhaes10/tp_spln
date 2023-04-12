@@ -1,11 +1,11 @@
 <img src="hydratext/images/hydratext_title.png">
 
-[![License](https://img.shields.io/npm/l/express?style=flat-square)](https://github.com/edumagalhaes10/tp_spln/blob/main/LICENSE)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![pytesseract](https://img.shields.io/badge/pytesseract->=0.3.10-blue.svg)](https://shields.io/)
 [![gramformer](https://img.shields.io/badge/gramformer->=1.0-blue.svg)](https://shields.io/)
 [![nltk](https://img.shields.io/badge/nltk->=3.8.1-blue.svg)](https://shields.io/)
 [![streamlit](https://img.shields.io/badge/streamlit->=1.20.0-blue.svg)](https://shields.io/)
+[![License](https://img.shields.io/npm/l/express?style=flat-square)](https://github.com/edumagalhaes10/tp_spln/blob/main/LICENSE)
 
 
 ## Welcome to HydraText, 
@@ -15,7 +15,15 @@ The present tool provides the following functionalities and is designed to be ac
 
 Have fun using our tool!!! We hope it's useful!!! 😁
 
+### ⚙️ Installation
+
+To install and use HydraText follow the steps below:
+- Clone this repository
+- Run either *flit install* or *pip install -e* in the project directory
+
 > **Note:** After installing the tool, the command *hydratxt_post_install* may be run.
+
+> **How to use:** To use HydraText just use the command *hydratxt* in your command prompt.
 
 ### 📸 Extract text from images and PDFs
 
