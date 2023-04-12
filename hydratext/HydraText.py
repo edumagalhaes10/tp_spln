@@ -14,13 +14,18 @@ image = Image.open(f'{folder}/images/hydratext_title.png')
 st.image(image,width=400)
 
 
-filename_md = os.path.dirname(folder) + "/hydratext/README.md"
+filename_md = folder + "/README.md"
 
 with open(filename_md, "r") as f:
     readme_text = f.readlines()
     readme_text = readme_text[1:]
     readme_text = "".join(readme_text)
     st.markdown(readme_text,unsafe_allow_html=True)
+
+
+
+st.write("---")
+st.markdown("Visit the [HydraText GitHub repository](https://github.com/edumagalhaes10/tp_spln) for more information.")
 
 #st.sidebar.success("Select a demo above.")
 
