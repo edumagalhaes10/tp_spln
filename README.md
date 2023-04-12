@@ -1,4 +1,5 @@
 <img src="hydratext/images/hydratext_title.png">
+
 [![License](https://img.shields.io/npm/l/express?style=flat-square)](https://github.com/edumagalhaes10/tp_spln/blob/main/LICENSE)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![pytesseract](https://img.shields.io/badge/pytesseract->=0.3.10-blue.svg)](https://shields.io/)
