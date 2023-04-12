@@ -1,13 +1,19 @@
 <img src="hydratext/images/hydratext_title.png">
 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+[![pytesseract](https://img.shields.io/badge/pytesseract->=0.3.10-blue.svg)](https://shields.io/)
+[![gramformer](https://img.shields.io/badge/gramformer->=1.0-blue.svg)](https://shields.io/)
+[![nltk](https://img.shields.io/badge/nltk->=3.8.1-blue.svg)](https://shields.io/)
+[![streamlit](https://img.shields.io/badge/streamlit->=1.20.0-blue.svg)](https://shields.io/)
+[![License](https://img.shields.io/npm/l/express?style=flat-square)](https://github.com/edumagalhaes10/tp_spln/blob/main/LICENSE)
+
+
 ## Welcome to HydraText, 
 A Natural Language Processing tool developed in the context of a Software Engineering Master's course: Scripting in Natural Language Processing. 
 
 The present tool provides the following functionalities and is designed to be accessible for any person with or without knowledge either in Software Engineering and Natural Language Processing. 
 
 Have fun using our tool!!! We hope it's useful!!! 😁
-
-> **Note:** After installing the tool, the command *hydratxt_post_install* may be run.
 
 ### 📸 Extract text from images and PDFs
 
@@ -19,7 +25,7 @@ For that, in the image section just select the language you want to use and down
 
 You can also extract text from a PDF file. Just upload it and the text will be extracted.
 
-### 📄 Correct grammar
+### ✅ Correct grammar
 
 Provide a text, or use the text extracted from an image or PDF, and the grammar will be corrected.
 The corrected text can be seen in two ways:
