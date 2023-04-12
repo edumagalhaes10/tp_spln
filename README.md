@@ -39,7 +39,7 @@ For that, in the image section just select the language you want to use and down
 
 You can also extract text from a PDF file. Just upload it and the text will be extracted.
 
-### 📄 Correct grammar
+### ✅ Correct grammar
 
 Provide a text, or use the text extracted from an image or PDF, and the grammar will be corrected.
 The corrected text can be seen in two ways:
