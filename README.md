@@ -1,4 +1,11 @@
 <img src="hydratext/images/hydratext_title.png">
+[![License](https://img.shields.io/npm/l/express?style=flat-square)](https://github.com/edumagalhaes10/tp_spln/blob/main/LICENSE)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+[![pytesseract](https://img.shields.io/badge/pytesseract->=0.3.10-blue.svg)](https://shields.io/)
+[![gramformer](https://img.shields.io/badge/gramformer->=1.0-blue.svg)](https://shields.io/)
+[![nltk](https://img.shields.io/badge/nltk->=3.8.1-blue.svg)](https://shields.io/)
+[![streamlit](https://img.shields.io/badge/streamlit->=1.20.0-blue.svg)](https://shields.io/)
+
 
 ## Welcome to HydraText, 
 A Natural Language Processing tool developed in the context of a Software Engineering Master's course: Scripting in Natural Language Processing. 
