@@ -72,3 +72,11 @@ Provide a text, or use the text extracted from an image or PDF and it will show 
 - Top 10 most used words
 - Top 10 most used words without stopwords
 - List of collocations (A sequence of words that occurs together unusually often.)
+
+---
+
+### Authors
+
+- [Diogo Vieira](https://github.com/DiogoVieira63)
+- [Eduardo Magalhães](https://github.com/edumagalhaes10)
+
