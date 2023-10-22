@@ -1,4 +1,4 @@
-<img src="hydratext/images/hydratext_title.png">
+<img src="hydratext/images/hydratext_title.png" width=50%>
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![pytesseract](https://img.shields.io/badge/pytesseract->=0.3.10-blue.svg)](https://shields.io/)

@@ -47,5 +47,5 @@ Provide a text, or use the text extracted from an image or PDF and it will show 
 
 - Vocabulary size (number of unique words)
 - Top 10 most used words
-- Top 10 most used words with stopwords and punctuation
+- Top 10 most used words without stopwords and punctuation
 - List of collocations (A sequence of words that occurs together unusually often.)
