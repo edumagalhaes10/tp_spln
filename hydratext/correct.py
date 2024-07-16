@@ -4,6 +4,7 @@ from nltk.tokenize import sent_tokenize
 
 def highlight_sentence(phrase,edits):
    words = phrase.split()
+   count = 0
    for edit in edits:
       print(edit,words)
       while len(words) <= edit[2]:
@@ -11,10 +12,12 @@ def highlight_sentence(phrase,edits):
       if edit[2] == edit[3]:
          # add word between edit[2] and edit[3]
          words = words[:edit[2]] + [""] + words[edit[2]:]
-      words[edit[2]] = f'~~:red[{edit[1]}]~~ :green[{edit[4]}]'
+      words[edit[2] + count] = f'~~:red[{edit[1]}]~~ :green[{edit[4]}]'
       if edit[3] - edit[2] >= 2:
          for n in range(edit[2] + 1, edit[3]):
-            words[n] = ""
+            words[n + count] = ""
+      if edit[5] == edit[6]:
+         count += 1
    return " ".join(words)
 
 def correct_sentence(sentence, gramformer):
